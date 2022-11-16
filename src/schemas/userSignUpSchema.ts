@@ -5,7 +5,7 @@ const userSignUpSchema = joi.object({
   email: joi.string().email().required(),
   image: joi.string().required(),
   password: joi.string().required(),
-  city: joi.string().required()
+  torre: joi.string().required()
 });
 
 export default userSignUpSchema;

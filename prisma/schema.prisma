@@ -16,8 +16,8 @@ model User {
   email    String @unique
   image    String
   password String
-  city     String
-
+  torre     String
+  Purchases Purchases[]
   @@map("users")
 }
 
@@ -40,4 +40,12 @@ model Recommendation {
   score       Int    @default(0)
 
   @@map("recommendation")
+}
+
+model Purchases{
+  id Int @id @default(autoincrement())
+  owner_id Int
+  owner User @relation(fields: [owner_id], references: [id])
+  compra String
+  hora DateTime
 }
