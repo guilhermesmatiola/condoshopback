@@ -10,6 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum any {
+  Int
+  String
+}
+
 model User {
   id       Int    @id @default(autoincrement())
   name     String
@@ -27,6 +32,7 @@ model Products {
   description String
   image       String
   price       Float
+  Purchases Purchases[]
 
   @@map("products")
 }
@@ -46,6 +52,13 @@ model Purchases{
   id Int @id @default(autoincrement())
   owner_id Int
   owner User @relation(fields: [owner_id], references: [id])
-  compra String
+  product_id Int
+  product Products @relation(fields: [product_id], references: [id])
   hora DateTime
+}
+
+model Values{
+  id Int @id @default(autoincrement())
+  value1 String
+  value2 Int
 }
