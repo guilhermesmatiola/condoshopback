@@ -1,0 +1,21 @@
+// {
+//   "compilerOptions": {
+//     // "target": "es6",  
+//     // "module":"CommonJS",  
+//     "esModuleInterop": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "strict": false,
+//     "skipLibCheck": true,
+//   }
+// }
+{
+  "compilerOptions": {
+    // "target": "es6",  
+    "module":"CommonJS",  
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "skipLibCheck": true,
+  }
+}
