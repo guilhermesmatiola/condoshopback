@@ -5,7 +5,7 @@ import prisma from "../config/database"
 
 export async function values(req: Request, res: Response) {
   let {value1, value2} = req.body;
-
+  console.log(req.body.value1)
   if(value1=="ABCD01234EF45000011112222"){
     value2 = 1;
   }
@@ -57,7 +57,8 @@ export async function values(req: Request, res: Response) {
   if(value1=="ABCD01234EF45000011112238"){
     value2 = 17;
   }
-
+  res.status(200).send({value1,value2});
+  
   async function getAll() {
   
     try{
@@ -65,9 +66,10 @@ export async function values(req: Request, res: Response) {
       join "Values" on products.id = "Values".value2
       where "Values".value1 = ${value1}`
 
-      return (RIFDReturn)
+      return RIFDReturn;
     }
     catch(error){
+      //throw error
       return res.status(500).send(value1)
     }
       
