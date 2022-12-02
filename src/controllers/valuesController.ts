@@ -58,6 +58,7 @@ export async function values(req: Request, res: Response) {
   }
 
   
+  
   try {
     await prisma.$queryRaw`INSERT into "Values" (value1, value2) values (${value1}, ${value2});`;
 
