@@ -22,7 +22,7 @@ export async function newValues
 
 const valuesService = {
     findAll,
-    newValues
+    newValues,
   };
   
   export default valuesService;

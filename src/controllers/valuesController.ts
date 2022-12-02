@@ -87,20 +87,3 @@ export async function values(req: Request, res: Response) {
     return res.status(500).send(error);
   }
 }
-
-// export async function getAll(req: Request, res: Response) {
-//   let {value1} = req.body;
-
-//   try{
-//     await prisma.$queryRaw`select distinct(products.name) from products
-//     join "Values" on products.id = "Values".value2
-//     where "Values".value1 = ${value1}`
-//   }
-//   catch(error){
-//     return res.status(500).send(value1)
-//   }
-    
-  
-//   // const values = await valuesService.findAll();
-//     // res.status(200).send(values);
-// }
