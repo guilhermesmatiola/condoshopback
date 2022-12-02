@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { getAll, values } from "../controllers/valuesController";
+import {  values } from "../controllers/valuesController";
 
 const recommendationRouter = Router();
 
-recommendationRouter.get("/values",getAll);
+//recommendationRouter.get("/values",getAll, values);
 recommendationRouter.post("/values", values);
 
 
