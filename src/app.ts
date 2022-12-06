@@ -7,8 +7,8 @@ import e2eRouter from './routes/e2eRouter';
 import productRouter from './routes/productRouter';
 import userRouter from './routes/userRouter';
 import recommendationsRouter from './routes/recommendationsRouter';
-import valuesRouter from './routes/valuesRouter';
-import rfidRouter from './routes/rfidPurcRouter'
+//import valuesRouter from './routes/valuesRouter';
+import rfidRouter from './routes/EPCRouter'
 
 dotenv.config();
 
@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'test') {
 
 app.use(productRouter);
 app.use(recommendationsRouter)
-app.use(valuesRouter)
+//app.use(valuesRouter)
 app.use(rfidRouter)
 app.use(handleErrorsMiddleware);
 
