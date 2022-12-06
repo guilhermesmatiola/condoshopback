@@ -16,23 +16,23 @@ enum any {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  name     String
-  email    String @unique
-  image    String
-  password String
+  id        Int    @id @default(autoincrement())
+  name      String
+  email     String @unique
+  image     String
+  password  String
   torre     String
-  Purchases Purchases[]
+  Purchase  Purchase[]
   @@map("users")
 }
 
-model Products {
+model Product {
   id          Int    @id @default(autoincrement())
   name        String @unique
   description String
   image       String
   price       Float
-  Values Values[]
+  EPC        EPC[]
 
   @@map("products")
 }
@@ -45,20 +45,22 @@ model Recommendation {
   price       Float
   score       Int    @default(0)
 
-  @@map("recommendation")
+  @@map("recommendations")
 }
 
-model Purchases{
-  id Int @id @default(autoincrement())
+model Purchase{
+  id       Int @id @default(autoincrement())
   owner_id Int
-  owner User @relation(fields: [owner_id], references: [id])
-  compra String
-  hora DateTime
+  owner    User @relation(fields: [owner_id], references: [id])
+  compra   String
+  hora     DateTime
+  @@map("purchases")
 }
 
-model Values{
-  id Int @id @default(autoincrement())
-  value1 String
-  value2 Int
-  product_rf Products @relation(fields: [value2], references: [id])
+model EPC{
+  id         Int @id @default(autoincrement())
+  code       String
+  product_id Int
+  product    Product @relation(fields: [product_id], references: [id])
+  @@map("epcs")
 }
