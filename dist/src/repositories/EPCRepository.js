@@ -74,9 +74,10 @@ function getByEPC(codigo) {
         var product;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, database_1["default"].$queryRaw(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n      SELECT * FROM products\n      JOIN epcs ON products.id = epcs.code\n      WHERE epcs.code = ", ""], ["\n      SELECT * FROM products\n      JOIN epcs ON products.id = epcs.code\n      WHERE epcs.code = ", ""])), codigo)];
+                case 0: return [4 /*yield*/, database_1["default"].$queryRaw(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n      SELECT * FROM products\n      JOIN epcs ON products.id = epcs.product_id\n      WHERE epcs.code = ", ";"], ["\n      SELECT * FROM products\n      JOIN epcs ON products.id = epcs.product_id\n      WHERE epcs.code = ", ";"])), codigo)];
                 case 1:
                     product = _a.sent();
+                    console.log(product);
                     return [2 /*return*/, product];
             }
         });

@@ -15,8 +15,9 @@ export async function insert(data:TEPCs) {
 export async function getByEPC(codigo: string){
   const product:Product = await prisma.$queryRaw`
       SELECT * FROM products
-      JOIN epcs ON products.id = epcs.code
-      WHERE epcs.code = ${codigo}`;
+      JOIN epcs ON products.id = epcs.product_id
+      WHERE epcs.code = ${codigo};`;
 
+  console.log(product);
   return product;
 }

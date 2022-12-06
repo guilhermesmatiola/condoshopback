@@ -1,5 +1,4 @@
-"use strict";
-exports.__esModule = true;
+//import * as valuesRepository from '../repositories/EPCRepository';
 // async function findAll() {
 //   const products = await valuesRepository.findAll();
 //   return products;
